@@ -1,0 +1,46 @@
++--------+--------------------------------+-------------------------------------------------------------+----------------------+-----------------------------------------------------------+------------+
+| Domain | Method                         | URI                                                         | Name                 | Action                                                    | Middleware |
++--------+--------------------------------+-------------------------------------------------------------+----------------------+-----------------------------------------------------------+------------+
+|        | GET|HEAD                       | /                                                           |                      | Closure                                                   | web        |
+|        | GET|HEAD                       | api/docs                                                    |                      | Closure                                                   |            |
+|        | POST                           | api/v1/posts                                                | api.v1.posts.store   | App\Http\Controllers\API\PostAPIController@store          | web        |
+|        | GET|HEAD                       | api/v1/posts                                                | api.v1.posts.index   | App\Http\Controllers\API\PostAPIController@index          | web        |
+|        | GET|HEAD                       | api/v1/posts/create                                         | api.v1.posts.create  | App\Http\Controllers\API\PostAPIController@create         | web        |
+|        | GET|HEAD                       | api/v1/posts/{posts}                                        | api.v1.posts.show    | App\Http\Controllers\API\PostAPIController@show           | web        |
+|        | PUT|PATCH                      | api/v1/posts/{posts}                                        | api.v1.posts.update  | App\Http\Controllers\API\PostAPIController@update         | web        |
+|        | DELETE                         | api/v1/posts/{posts}                                        | api.v1.posts.destroy | App\Http\Controllers\API\PostAPIController@destroy        | web        |
+|        | GET|HEAD                       | api/v1/posts/{posts}/edit                                   | api.v1.posts.edit    | App\Http\Controllers\API\PostAPIController@edit           | web        |
+|        | GET|HEAD                       | bridge                                                      |                      | Closure                                                   | web        |
+|        | GET|HEAD                       | broadcast                                                   |                      | Closure                                                   | web        |
+|        | GET|HEAD                       | chat                                                        |                      | App\Http\Controllers\ChatController@getIndex              | web        |
+|        | GET|HEAD                       | chat/index/{one?}/{two?}/{three?}/{four?}/{five?}           |                      | App\Http\Controllers\ChatController@getIndex              | web        |
+|        | POST                           | chat/message/{one?}/{two?}/{three?}/{four?}/{five?}         |                      | App\Http\Controllers\ChatController@postMessage           | web        |
+|        | GET|HEAD|POST|PUT|PATCH|DELETE | chat/{_missing}                                             |                      | App\Http\Controllers\ChatController@missingMethod         | web        |
+|        | GET|HEAD|POST|PUT|PATCH|DELETE | docs/{page?}                                                |                      | Closure                                                   |            |
+|        | GET|HEAD                       | home                                                        |                      | App\Http\Controllers\HomeController@index                 | web,auth   |
+|        | POST                           | login                                                       |                      | App\Http\Controllers\Auth\AuthController@postLogin        | web,guest  |
+|        | GET|HEAD                       | login                                                       |                      | App\Http\Controllers\Auth\AuthController@getLogin         | web,guest  |
+|        | GET|HEAD                       | logout                                                      |                      | App\Http\Controllers\Auth\AuthController@logout           | web        |
+|        | POST                           | messages                                                    | messages.store       | App\Http\Controllers\MessagesController@store             | web        |
+|        | GET|HEAD                       | messages                                                    | messages             | App\Http\Controllers\MessagesController@index             | web        |
+|        | GET|HEAD                       | messages/create                                             | messages.create      | App\Http\Controllers\MessagesController@create            | web        |
+|        | GET|HEAD                       | messages/{id}                                               | messages.show        | App\Http\Controllers\MessagesController@show              | web        |
+|        | PUT                            | messages/{id}                                               | messages.update      | App\Http\Controllers\MessagesController@update            | web        |
+|        | GET|HEAD                       | notifications                                               |                      | App\Http\Controllers\NotificationController@getIndex      | web        |
+|        | GET|HEAD                       | notifications/index/{one?}/{two?}/{three?}/{four?}/{five?}  |                      | App\Http\Controllers\NotificationController@getIndex      | web        |
+|        | POST                           | notifications/notify/{one?}/{two?}/{three?}/{four?}/{five?} |                      | App\Http\Controllers\NotificationController@postNotify    | web        |
+|        | GET|HEAD|POST|PUT|PATCH|DELETE | notifications/{_missing}                                    |                      | App\Http\Controllers\NotificationController@missingMethod | web        |
+|        | POST                           | password/email                                              |                      | App\Http\Controllers\Auth\PasswordController@postEmail    | web,guest  |
+|        | GET|HEAD                       | password/reset                                              |                      | App\Http\Controllers\Auth\PasswordController@getEmail     | web,guest  |
+|        | POST                           | password/reset                                              |                      | App\Http\Controllers\Auth\PasswordController@postReset    | web,guest  |
+|        | GET|HEAD                       | password/reset/{token}                                      |                      | App\Http\Controllers\Auth\PasswordController@getReset     | web,guest  |
+|        | GET|HEAD                       | posts                                                       | posts.index          | App\Http\Controllers\PostController@index                 | web        |
+|        | POST                           | posts                                                       | posts.store          | App\Http\Controllers\PostController@store                 | web        |
+|        | GET|HEAD                       | posts/create                                                | posts.create         | App\Http\Controllers\PostController@create                | web        |
+|        | GET|HEAD                       | posts/{posts}                                               | posts.show           | App\Http\Controllers\PostController@show                  | web        |
+|        | DELETE                         | posts/{posts}                                               | posts.destroy        | App\Http\Controllers\PostController@destroy               | web        |
+|        | PUT|PATCH                      | posts/{posts}                                               | posts.update         | App\Http\Controllers\PostController@update                | web        |
+|        | GET|HEAD                       | posts/{posts}/edit                                          | posts.edit           | App\Http\Controllers\PostController@edit                  | web        |
+|        | GET|HEAD                       | register                                                    |                      | App\Http\Controllers\Auth\AuthController@getRegister      | web,guest  |
+|        | POST                           | register                                                    |                      | App\Http\Controllers\Auth\AuthController@postRegister     | web,guest  |
++--------+--------------------------------+-------------------------------------------------------------+----------------------+-----------------------------------------------------------+------------+
